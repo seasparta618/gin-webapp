@@ -22,6 +22,7 @@ type Claims struct {
 }
 
 func (s *AuthService) Authenticate(username, password string, expired bool) (string, string, error) {
+	// just a simple verification, the user name and password should be stored in database
 	if username != "admin" || password != "password" {
 		return "", "", errors.New("invalid username or password")
 	}
